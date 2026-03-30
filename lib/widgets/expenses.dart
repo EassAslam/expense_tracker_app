@@ -1,4 +1,5 @@
  import 'package:expense_tracker_app/models/Expense.dart';
+import 'package:expense_tracker_app/widgets/expenses_list.dart';
 import 'package:flutter/material.dart';
 
 
@@ -35,8 +36,10 @@ final List<Expense> _registeredExpenses = [
       body: Column(
         children: [
           Text("Chart here"),
-          SizedBox(height:30),
-          Text("Expenses here")
+          
+          SizedBox( 
+            height:300,
+            child: ExpensesList(expenses:_registeredExpenses)),
         ],
       )
     );
