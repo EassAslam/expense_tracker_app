@@ -27,6 +27,12 @@ final List<Expense> _registeredExpenses = [
     date: DateTime.now(),
     catagory: Catagory.travel
   ),
+  Expense(
+    title: 'Movie Ticket',
+    amount: 10.99,
+    date: DateTime.now(),
+    catagory: Catagory.leisure
+  ),
 ];
 
   @override
@@ -37,8 +43,7 @@ final List<Expense> _registeredExpenses = [
         children: [
           Text("Chart here"),
           
-          SizedBox( 
-            height:300,
+          Expanded( 
             child: ExpensesList(expenses:_registeredExpenses)),
         ],
       )
