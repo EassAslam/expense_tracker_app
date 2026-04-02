@@ -39,6 +39,15 @@ final List<Expense> _registeredExpenses = [
   Widget build(BuildContext context) {
     
     return Scaffold(
+      appBar: AppBar(
+      title: const Text("Expense Tracker"),
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.add),
+          onPressed: () {},
+        ), // IconButton
+      ],
+    ),
       body: Column(
         children: [
           Text("Chart here"),
