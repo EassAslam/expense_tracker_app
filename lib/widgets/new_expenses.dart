@@ -11,7 +11,7 @@ class NewExpense extends StatefulWidget {
 
 class NewExpenseState extends State<NewExpense> {
   final _titleController = TextEditingController();
-
+  final _amountController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,14 +22,19 @@ class NewExpenseState extends State<NewExpense> {
             controller: _titleController,
             maxLength: 50,
             keyboardType: TextInputType.name,
-            decoration: const InputDecoration(
-              label: Text("Title"),
+            decoration: const InputDecoration(label: Text("Title")),
+          ),
+
+          TextField(
+            controller: _amountController,
+            maxLength: 10,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              prefixText: '\$',
+              label: Text("Amount"),
             ),
           ),
-          Row(children: [
 
-          ],),
-          
           Row(
             children: [
               ElevatedButton(
