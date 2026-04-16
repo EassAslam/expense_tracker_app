@@ -6,7 +6,7 @@ final formatter = DateFormat.yMd();
 
 enum Catagory {food, travel, leisure, work}
 
-const CatagoryIcons={
+const catagoryIcons={
   Catagory.food: Icons.lunch_dining,
   Catagory.travel: Icons.flight_takeoff,
   Catagory.leisure: Icons.movie,
@@ -26,4 +26,25 @@ final Catagory catagory;
 String get formattedDate{ 
   return formatter.format(date);
 }
+}
+class ExpenseBucket{
+  const ExpenseBucket({required this.catagory, required this.expense});
+  ExpenseBucket.forCatagory(
+    List<Expense> allExpenses, this.catagory
+  )
+  : expense = allExpenses
+  .where((expense)=> expense.catagory == catagory)
+  .toList();
+  final Catagory catagory;
+  final List<Expense> expense;
+
+  double get totalExpense{
+    double sum = 0;
+    for(final expense in expense){
+      sum+= expense.amount;
+
+    }
+    return sum;
+  }
+  
 }
